@@ -4,10 +4,14 @@ public class Bomb extends Actor
 {
     public void act()
     {
-        move(-3);
+        move(-10);
         
         if(getX() <= 0) {
             resetBomb();
+        }
+        
+        if (isTouching(Hero.class)) {
+            getWorld().removeObject(this);
         }
     }
     
